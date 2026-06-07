@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokersluck | Premium Design & Development</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --midnight-navy: #001F3F;
+            --emerald-luck: #2ECC71;
+            --pure-white: #FFFFFF;
+            --slate-gray: #7F8C8D;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--midnight-navy);
+            background-color: var(--pure-white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header {
+            background-color: var(--pure-white);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--midnight-navy);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav a {
+            color: var(--midnight-navy);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--emerald-luck);
+        }
+
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.8)), url('assets/brand_kit.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--pure-white);
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            background-color: var(--emerald-luck);
+            color: var(--midnight-navy);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background-color: #27ae60;
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .portfolio-item {
+            background: #fdfdfd;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio-item.featured {
+            border: 2px solid var(--emerald-luck);
+            background: #f7fffb;
+        }
+
+        .portfolio-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .portfolio-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .portfolio-flyer {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .portfolio-desc {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .service-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border-bottom: 5px solid var(--emerald-luck);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .contact {
+            background-color: #f4f4f4;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--slate-gray);
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .contact-form button {
+            background-color: var(--midnight-navy);
+            color: var(--pure-white);
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .contact-form button:hover {
+            background-color: #003366;
+        }
+
+        footer {
+            background-color: var(--midnight-navy);
+            color: var(--pure-white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo_main.png" alt="Jokersluck Logo">
+        </div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#promotions">Offers</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Your Wild Card for Digital Success</h1>
+        <p>Expertly crafted logos, flyers, and websites for startups and small businesses. We bring your vision to life with a modern, clever edge.</p>
+        <a href="#contact" class="btn">Get Started</a>
+    </section>
+
+    <section id="services" class="section">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Logo Design</h3>
+                <p>Build a strong brand identity with our minimalist and premium logo concepts.</p>
+            </div>
+            <div class="service-card">
+                <h3>Flyer Design</h3>
+                <p>Eye-catching promotional materials that capture attention and drive results.</p>
+            </div>
+            <div class="service-card">
+                <h3>Web Development</h3>
+                <p>Modern, responsive websites built from scratch to showcase your business.</p>
+            </div>
+            <div class="service-card">
+                <h3>Website Updates</h3>
+                <p>Refresh your existing site with the latest features and modern design trends.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section">
+        <h2 class="section-title">Our Work</h2>
+        <div class="portfolio-grid">
+            <!-- IronCore Fitness (Featured) -->
+            <div class="portfolio-item featured">
+                <div class="portfolio-header">
+                    <img src="assets/portfolio/ironcore-fitness/logo.png" alt="IronCore Fitness Logo" class="portfolio-logo">
+                    <div>
+                        <h3>IronCore Fitness</h3>
+                        <p><strong>Industrial Gym</strong></p>
+                    </div>
+                </div>
+                <img src="assets/portfolio/ironcore-fitness/flyer.png" alt="IronCore Fitness Flyer" class="portfolio-flyer">
+                <p class="portfolio-desc">High-energy, industrial-style visual identity with aggressive high-contrast design to motivate and inspire.</p>
+            </div>
+
+            <!-- Bean & Brew -->
+            <div class="portfolio-item">
+                <div class="portfolio-header">
+                    <img src="assets/portfolio/bean-and-brew/logo.png" alt="Bean & Brew Logo" class="portfolio-logo">
+                    <div>
+                        <h3>Bean & Brew</h3>
+                        <p><strong>Local Cafe</strong></p>
+                    </div>
+                </div>
+                <img src="assets/portfolio/bean-and-brew/flyer.png" alt="Bean & Brew Flyer" class="portfolio-flyer">
+                <p class="portfolio-desc">Warm and inviting atmosphere captured through earthy tones and a minimalist, hand-crafted feel.</p>
+            </div>
+
+            <!-- NexusTech -->
+            <div class="portfolio-item">
+                <div class="portfolio-header">
+                    <img src="assets/portfolio/nexustech/logo.png" alt="NexusTech Logo" class="portfolio-logo">
+                    <div>
+                        <h3>NexusTech</h3>
+                        <p><strong>SaaS Startup</strong></p>
+                    </div>
+                </div>
+                <img src="assets/portfolio/nexustech/flyer.png" alt="NexusTech Flyer" class="portfolio-flyer">
+                <p class="portfolio-desc">Sleek, geometric design for a modern SaaS company focusing on connectivity and innovation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="promotions" class="section" style="background-color: var(--midnight-navy); color: var(--pure-white);">
+        <h2 class="section-title" style="color: var(--pure-white);">Special Offers</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white;">
+                <h3>Startup Kickstart</h3>
+                <img src="assets/marketing/jokersluck_marketing_flyer.png" alt="Jokersluck Marketing Flyer" class="portfolio-flyer">
+                <p class="portfolio-desc">Get your business off the ground with our complete branding and landing page package.</p>
+            </div>
+            <div class="portfolio-item" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white;">
+                <h3>Modernize Your Brand</h3>
+                <img src="assets/marketing/jokersluck_marketing_flyer_v2.png" alt="Jokersluck Marketing Flyer V2" class="portfolio-flyer">
+                <p class="portfolio-desc">Refresh your existing website and logo to stay ahead of the competition.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2 class="section-title">Why Jokersluck?</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto;">At Jokersluck, we believe every business deserves a unique advantage. Our team balances professional reliability with creative innovation. Whether you're a startup looking for your first logo or an established business needing a website refresh, we are your "Wild Card" – the unexpected element that ensures your success.</p>
+    </section>
+
+    <section id="contact" class="section contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <form class="contact-form" action="/submit" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea rows="5" name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Jokersluck. All rights reserved.</p>
+    </footer>
+</body>
+</html>
