@@ -1,6 +1,0 @@
-json
-{
-  "rewrites": [
-    { "source": "/submit", "destination": "/api/app.py" }
-  ]
-}
